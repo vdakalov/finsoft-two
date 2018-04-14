@@ -18,15 +18,29 @@ class RbcCashApi extends API {
   }
 
   /**
-   * Get cash rates
+   * Get buy cash rates
    *
    * @see https://cash.rbc.ru/
    */
-  static async getCashRates() {
+  static async getCashBuyRates() {
     return this.request('cash_rates/', {
       city: 1,
       currency: 3,
       deal: 'buy',
+      amount: 100
+    });
+  }
+
+  /**
+   * Get sell cash rates
+   *
+   * @see https://cash.rbc.ru/
+   */
+  static async getCashSellRates() {
+    return this.request('cash_rates/', {
+      city: 1,
+      currency: 3,
+      deal: 'sell',
       amount: 100
     });
   }
