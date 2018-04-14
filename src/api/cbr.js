@@ -1,12 +1,14 @@
 const http = require('http');
-const convert = require('xml-js');
 const moment = require('moment');
 const xmldom = require('xmldom');
 const xpath = require('xpath.js');
 
 moment.locale('ru');
 
-class CBR {
+/**
+ * Class provides work with api on cbr.ru
+ */
+class CbrApi {
   /**
    * Request currency value of specified code
    * @see http://www.cbr.ru/scripts/XML_valFull.asp
@@ -48,4 +50,4 @@ class CBR {
   }
 }
 
-module.exports = CBR;
+module.exports = CbrApi;
